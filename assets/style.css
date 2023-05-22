@@ -126,6 +126,11 @@ a:hover{
     color: rgb(180, 225, 239);
     text-decoration: none;
 }
+
+img{
+    width:40%;
+}
+
 .sez-base{
     background-color: rgb(50, 50, 50) ;
     font-weight: bold;
@@ -143,9 +148,7 @@ a:hover{
 }
 
 
-img{
-    width: 37.5%;
-}
+
 .profile{
     width: 20%;
     border-radius: 50%;
