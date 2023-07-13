@@ -1,3 +1,6 @@
+
+/* Generali */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +10,16 @@
 }
 
 body{
-    color: rgb(201, 227, 236) ;
     background-color:rgb(10, 10, 26);
+    color: rgb(201, 227, 236) ;
 }
 
+main{
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
-
-
-
+/* Scrollbar */
 
 html::-webkit-scrollbar {
     width: 7px;
@@ -27,21 +32,14 @@ html::-webkit-scrollbar-thumb {
     border-radius: 15px;
 }
 
-
-
-
-
-main{
-    padding-left: 20px;
-    padding-right: 20px;
-}
+/* Navbar */
 
 nav{ 
     background-color: rgb(0, 0, 0);
+    position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
-    position: fixed;
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -51,6 +49,25 @@ nav{
     padding-left: 30px;
     padding-right: 15px;
 }
+
+.menu{
+    background-color: rgb(35, 35, 35);
+    list-style-type: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 190px;
+    padding:60px 25px;
+    margin-bottom: 0;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+.menu li{
+    padding: 10px 0;
+}
+
 .menu-toggle{
     margin-right: 40px;
     display: block;
@@ -62,7 +79,6 @@ nav{
 .menu-toggle a:hover{
     color: white;
 }
-
 .menu-toggle input{
     display: block;
     width: 33px;
@@ -75,8 +91,8 @@ nav{
     z-index: 2;
     cursor: pointer;
 }
-
 .menu-toggle span{
+    background-color: rgb(151, 151, 151);
     display: block;
     width: 33px;
     height: 4px;
@@ -84,68 +100,43 @@ nav{
     border-radius: 3px;
     position: relative;
     z-index: 1;
-    background-color: rgb(151, 151, 151);
-
     transform-origin: 4px 0px;
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),opacity 0.55s ease;
 }
-
 .menu-toggle span:first-child{
     transform-origin: 0% 0%;
 }
-
 .menu-toggle span:nth-last-child(2){
     transform-origin: 0% 100%;
 }
-
 .menu-toggle input:checked ~ span{
     background-color: rgb(201, 227, 236);
     opacity: 1;
-
     transform: rotate(45deg) translate(-2px, -1px);
 }
 .menu-toggle input:checked ~ span:nth-last-child(3){
     opacity: 0;
-
     transform: rotate(0deg) scale(0.2, 0.2);
 }
 .menu-toggle input:checked ~ span:nth-last-child(2){
     transform: rotate(-45deg) translate(0, -1px);
 }
-
-.menu{
-    list-style-type: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 190px;
-    padding:60px 25px;
-    margin-bottom: 0;
-    background-color: rgb(35, 35, 35);
-    
-    transform-origin: 0% 0%;
-    transform: translate(-100%, 0);
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-}
-.menu li{
-    padding: 10px 0;
-}
 .menu-toggle input:checked ~ ul{
     transform: none;
 }
+
 button{
-    color:  rgb(201, 227, 236);
     background-color: rgb(35, 35, 35);
+    color:  rgb(201, 227, 236);
+    padding: 5px;
     border: none;
     border-radius:15px;
-    padding: 5px;
     margin: 7px;
     font-weight: bold;
 }
 button:hover{
-    color: lightblue;
     background-color: rgb(75, 75, 75);
+    color: lightblue;
     font-weight: bold;
 }
 a{
@@ -157,14 +148,19 @@ a:hover{
     color: rgb(180, 225, 239);
     text-decoration: none;
 }
+
+/* Sez-1 */
+
 #bio, #contatti{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
     padding-top: 40px;
     margin-top: 20px;
     margin-bottom: 0px;
-    display:flex;
-    flex-direction: row;
     text-size-adjust: auto;
 }
+
 .logo{
     width: 0px;
 }
@@ -172,15 +168,16 @@ a:hover{
     width: 100%;
 }
 
-strong{
-    color: hsl(194, 89%, 90%);
-}
-
-h4, summary{
-    font-weight: bold;
-}
-summary:hover{
-    filter: brightness(110%);
+.sez-base{
+    background-color: rgb(50, 50, 50) ;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    border: none;
+    border-radius: 15px;
+    margin-top: 0px;
+    margin-bottom: 30px;
 }
 .testo{
     padding: 15px;
@@ -189,6 +186,16 @@ summary:hover{
 .testo :last-child{
     margin-bottom: 0;
 }
+h4, summary{
+    font-weight: bold;
+}
+summary:hover{
+    filter: brightness(110%);
+}
+strong{
+    color: rgb(207, 242, 252);
+}
+
 .skill {
     padding: 30px 5px 5px 5px;
     margin: 10px;
@@ -197,8 +204,8 @@ summary:hover{
 .sk-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 100%;
     box-sizing: border-box;
+    width: 100%;
     margin-top: 30px;
 }
 .sk-item{
@@ -210,51 +217,38 @@ summary:hover{
 }
 .sk-item img{
     width: 50px;
-    margin-bottom: 10px;
     border: none;
+    margin-bottom: 10px;
 }
+
+/* Sez-2 */
+
 #portfolio{
     padding-top: 50px;
     padding-bottom: 20px;
 }
 #portfolio h4, #contatti h4{
-    text-align: center;
     margin: 30px;
+    text-align: center;
 }
 .sez-port-mob{
-    background-color: rgb(151, 151, 151) ;
-    font-weight: bold;
-    border: none;
-    border-radius: 15px;
-    padding: 5px 5px 5px 10px;
+    background-color: rgb(151, 151, 151);
     width:100%;
     height: 180px;
+    padding: 5px 5px 5px 10px;
+    border: none;
+    border-radius: 15px;
     margin: 6px 3px;
     display:flex;
     align-items: center;
     justify-content: center;
+    font-weight: bold;
 }
 .sez-port-mob p{
     margin: 0;
 }
 
-
-#contatti, #bio{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-}
-.sez-base{
-    background-color: rgb(50, 50, 50) ;
-    border: none;
-    border-radius: 15px;
-    width: 100%;
-    padding-bottom: 10px;
-    margin-top: 0px;
-    margin-bottom: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
+/* Sez-3 */
 
 form{
     display:flex;
@@ -262,15 +256,15 @@ form{
     align-items: center;
 }
 input, textarea{
-    display: block;
+    background-color: rgb(151, 151, 151) ; 
     width: 100%;
     padding: 10px;
-    margin: 5px;
-    box-sizing: border-box;
-    background-color: rgb(151, 151, 151) ; 
-    font-weight: bold;
     border: none;
     border-radius: 15px;
+    margin: 5px;
+    display: block;
+    box-sizing: border-box;
+    font-weight: bold;
 }
 ::placeholder {
     color:rgb(35, 35, 35);
@@ -278,16 +272,18 @@ input, textarea{
   }
 .invio{
     background-color: rgb(130, 130, 130); 
-    color: #c9e3ec ;
+    color: rgb(201, 227, 236) ;
 }
 .invio:hover{
     background-color: rgb(141, 141, 141);
 }
+
 .profile img{
     width: 0%;
     border-radius: 50%;
 }
 
+/* Footer */
 
 footer{
     background-color: rgb(0, 0, 0);
@@ -303,7 +299,6 @@ footer{
     padding-left: 30px;
     padding-right: 30px;
 }
-
 .f-item{
     margin-top: 5px;
     margin-bottom: 5px;
@@ -319,11 +314,34 @@ footer{
     filter: brightness(150%);
 }
 
+
+/* Desktop */
+
+
 @media only screen and (min-width:750px) {
+    .menu{
+        background-color: rgb(35, 35, 35);
+        list-style-type: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width:205px;
+        padding:60px 25px;
+        margin-bottom: 0;
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+    .menu li{
+        width: 75%;
+    }
+    
     main, .f-container{
         max-width: 1500px;
         margin: 0 auto;
     }
+
     #bio{
         display: grid;
         grid-template-columns: 1fr 3fr;
@@ -335,32 +353,18 @@ footer{
         padding: 15px;
         margin: 10px;
     }
-
-    #contatti{
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        align-items: center;
-        padding-bottom: 10px;
-        margin-top: 70px;
-        margin-bottom: 30px;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
     .sez-base{
         background-color: rgb(50, 50, 50) ;
-        border: none;
-        border-radius: 15px;
-        padding-bottom: 10px;
-        margin-top: 30px;
-        margin-bottom: 30px;
         padding-left: 20px;
         padding-right: 20px;
+        padding-bottom: 10px;
+        border: none;
+        border-radius: 15px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+       
     }
-    .profile img{
-        width:100%;
-        padding: 15px;
-        margin: 10px 0px 10px 20px;
-    }
+
     .griglia{
         display:flex;
         flex-direction: row;
@@ -369,42 +373,32 @@ footer{
     }
     .sez-port-mob, .sez-port{
         background-color: rgb(151, 151, 151) ;
-        font-weight: bold;
-        border: none;
-        border-radius: 15px;
-        padding: 5px 5px 5px 10px;
         width:320px;
         height: 180px;
+        padding: 5px 5px 5px 10px;
+        border: none;
+        border-radius: 15px;
         margin: 6px 3px;
         display:flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        font-weight: bold;
     }
-    .menu{
-        list-style-type: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width:205px;
-        padding:60px 25px;
-        margin-bottom: 0;
-        background-color: rgb(35, 35, 35);
-        
-        transform-origin: 0% 0%;
-        transform: translate(-100%, 0);
-        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+    #contatti{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+        margin-top: 70px;
+        margin-bottom: 30px;
     }
-    .menu li{
-        width: 75%;
+    .profile img{
+        width:100%;
+        padding: 15px;
+        margin: 10px 0px 10px 20px;
     }
 }
-
-
-
-/*
- per desktop:
-    -meta tag "keywords"(guarda preferiti cartella S2IU)
-
-*/
