@@ -11,7 +11,7 @@
 
 body{
     background-color:rgb(10, 10, 26);
-    color: #c9e3ec ;
+    color: rgb(201, 227, 236) ;
 }
 
 main{
@@ -136,11 +136,11 @@ button{
 }
 button:hover{
     background-color: rgb(75, 75, 75);
-    color: lightblue;
+    color: rgb(173, 216, 230);
     font-weight: bold;
 }
 a{
-    color: #add8e6;
+    color: rgb(173, 216, 230);
     text-decoration: none;
     border: none;
 }
